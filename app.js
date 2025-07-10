@@ -1,16 +1,21 @@
 import express from "express";
 import userRouter from "./routes/user.js";
 import taskRouter from "./routes/task.js";
-import { config } from "dotenv";
+// import { config } from "dotenv";
 import cookieParser from "cookie-parser";
 import { errorMiddleware } from "./middlewares/error.js";
 import cors from "cors";
 
+import dotenv from "dotenv";
+dotenv.config();
+
+
 export const app = express();
 
-config({
-  path: "./config.env",
-});
+// config({
+//   path: "./.env",        for ( .env ) file
+//   path: "./.config.env"  for ( .config.env ) file
+// });
 
 // Using Middlewares
 app.use(express.json());
